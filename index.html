@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html ng-app="myapp">
 <head>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
 	<title></title>
 </head>
-<body ng-controller="HelloController">
-	<h2>Hello, {{hello.title}}!</h2>
-	<input type="text" ng-model="hello.title">
-	<button ng-click="printTitle()">Print scope to console</button>
-  </body>
+<body >
+	<div ng-controller="HelloController">
+		<h2>Hello, {{hello.title}}!</h2>
+		<input type="text" ng-model="hello.title">
+		<button ng-click="printTitle()">Print scope to console</button>
+	    <br>
+	</div>
+	<div>		
+	    <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
+	    <p>{{ greeting }} world!</p>
+	    <br>
+
+	    <input ng-model="name" type="text" placeholder="What is your name?">
+	    <h1>My name is {{name}}</h1>
+	</div>
+	<div ng-controller="PetController">
+	    <select name="select" ng-init="petSelect.select = petSelect.selectOptions[0]" ng-model="petSelect.select">
+	    	<option ng-repeat="item in petSelect.selectOptions">{{item}}</option>
+	     
+	    </select><br>
+	    <h3>I love {{petSelect.select}} <3 </h3>
+    </div>
+    <div>
+    	{{3.14159265359 | currency: "€"}}
+    </div>
+    <div>
+	    <h1>Please say something</h1>
+    	<input ng-model="sayText" type="text" placeholder="">
+    		<p>Yelling: {{sayText | uppercase}}</p>
+    		<p>Whispering: {{sayText | lowercase}}</p>
+
+    </div>
+  
 </body>
 </html>
+
+
+
