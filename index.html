@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+	<title></title>
+</head>
+<body ng-controller="HelloController">
+	<h2>Hello, {{hello.title}}!</h2>
+	<input type="text" ng-model="hello.title">
+	<button ng-click="printTitle()">Print scope to console</button>
+  </body>
+</body>
+</html>
