@@ -19,14 +19,13 @@ var application = angular.module('myapp', []);
 				"Dogs and Cats",
 				"Neither"
 			];
-
 		});
-	// application.controller("textController",
-	// 	function($scope) {
-	// 		$scope.sayText = {}
-	// 		$scope.sayText.yelling = "";
-	// 		$scope.sayText.whisper = ""; 
-	// 	});
+	application.controller("numController",
+		function($scope) {
+			$scope.data = {}
+			numChoice : null;
+		
+		});
 		
 		
 		
