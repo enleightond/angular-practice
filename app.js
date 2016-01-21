@@ -23,9 +23,13 @@ var application = angular.module('myapp', []);
 	application.controller("numController",
 		function($scope) {
 			$scope.data = {}
-			numChoice : null;
-		
+			numChoice : null;		
 		});
+	application.controller("tipController",
+		function($scope){
+			$scope.selectTip = [.10,.15,.20];
+		});
+
 		
 		
 		

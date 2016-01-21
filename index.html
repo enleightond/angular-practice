@@ -20,13 +20,6 @@
 	    <input ng-model="name" type="text" placeholder="What is your name?">
 	    <h1>My name is {{name}}</h1>
 	</div> -->
-	<!-- <div ng-controller="PetController">
-	    <select name="select" ng-init="petSelect.select = petSelect.selectOptions[0]" ng-model="petSelect.select">
-	    	<option ng-repeat="item in petSelect.selectOptions">{{item}}</option>
-	     
-	    </select><br>
-	    <h3>I love {{petSelect.select}} <3 </h3>
-    </div> -->
     <!-- <div>
     	<p>{{3.14159265359 | currency: "€"}}</p>
     	<p>{{3.14159265359 | number:3}}</p>
@@ -39,7 +32,7 @@
     		<p>Yelling: {{sayText | uppercase}}</p>
     		<p>Whispering: {{sayText | lowercase}}</p>
     </div> -->
-    <div ng-controller = "numController">
+    <!-- <div ng-controller = "numController">
     	<h2>How many digits of Pi do you want?
     	<select name="numChoice" ng-model="data.numChoice">
     		<option value="1">1</option>
@@ -52,6 +45,25 @@
       	</select></h2><br>
     	<h2>Here you go! The first {{data.numChoice}} digit(s) of Pi!</h2>
     	<h3>3.{{14159265359 | limitTo:data.numChoice}}</h3>	    
+    </div> -->
+	<!-- <div ng-controller="PetController">
+	    <select name="select" ng-init="petSelect.select = petSelect.selectOptions[0]" ng-model="petSelect.select">
+	    	<option ng-repeat="item in petSelect.selectOptions">{{item}}</option>
+	     
+	    </select><br>
+	    <h3>I love {{petSelect.select}} <3 </h3>
+    </div> -->
+    <div ng-controller = "tipController">
+    	<p>How much did your meal cost?</p>
+    	<input ng-model="value" type="number" placeholder="">
+    	<p>How much do you want to tip?</p>
+    	<select name="selectTip" ng-model="tip">
+    		<option ng-repeat="each in selectTip" value="{{each}}">
+    		{{each * 100}}%</option>
+    	</select>   	
+    	<br>
+    	<h1>Subtotal {{ value | currency}}</h1>
+    	<h1>Tip: {{ tip * value | currency}}</h1>  	
     </div>
   
 </body>
