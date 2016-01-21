@@ -53,7 +53,7 @@
 	    </select><br>
 	    <h3>I love {{petSelect.select}} <3 </h3>
     </div> -->
-    <div ng-controller = "tipController">
+   <!--  <div ng-controller = "tipController">
     	<p>How much did your meal cost?</p>
     	<input ng-model="value" type="number" placeholder="">
     	<p>How much do you want to tip?</p>
@@ -64,6 +64,25 @@
     	<br>
     	<h1>Subtotal {{ value | currency}}</h1>
     	<h1>Tip: {{ tip * value | currency}}</h1>  	
+    </div> -->
+    <div ng=controller = "madController">
+    	<label>Girl's Name</label>
+    	<p><input ng-model="name" type="text" placeholder="Enter a girls name..."></p>
+    	<label>Adjective</label>
+    	<p><input ng-model="adj" type="text" placeholder="Enter an Adjective..."></p>
+    	<label>Plural Noun</label>
+    	<p><input ng-model="pnoun0" type="text" placeholder="Enter a plural noun..."></p>
+    	<label>Plural Noun</label>
+    	<p><input ng-model="pnoun1" type="text" placeholder="Enter a plural noun..."></p>
+    	<label>An insect, plural</label>
+    	<p><input ng-model="insect" type="text" placeholder="Enter an insect, plural..."></p>
+    	<label>Plural Noun</label>
+    	<p><input ng-model="pnoun2" type="text" placeholder="Enter a plural noun..."></p>
+    	<label>Verb ending in 's'</label>
+    	<p><input ng-model="verb" type="text" placeholder="Enter a verb, ending in 's'..."></p>
+    	<p><button ng-click="(toggle=!toggle)">Generate!</button></p>
+    	<h3 ng-show="toggle">I'm in love with {{name}}. She's so {{adj}}!<br>She has big flat {{pnoun0}}, and when our<br>{{pnoun1}} meet, I get {{insect}} in my stomach.<br> I've fallen for her like a ton of {{pnoun2}}, and she<br>{{verb}} for me, too. But I think she's got<br>another girlfriend. What should I do?</h3>
+    	<p><button ng-click="(toggle=!toggle)">Play again!</button></p>
     </div>
   
 </body>

@@ -29,6 +29,12 @@ var application = angular.module('myapp', []);
 		function($scope){
 			$scope.selectTip = [.10,.15,.20];
 		});
+	application.controller("madController", 
+		function($scope) {
+			$scope.toggle = false;
+			 
+		});
+		
 
 		
 		
