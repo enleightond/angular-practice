@@ -3,6 +3,7 @@
 <head>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 	<title></title>
 </head>
 <body >
@@ -65,7 +66,7 @@
     	<h1>Subtotal {{ value | currency}}</h1>
     	<h1>Tip: {{ tip * value | currency}}</h1>  	
     </div> -->
-    <div ng=controller = "madController">
+    <!-- <div ng-controller = "madController">
     	<label>Girl's Name</label>
     	<p><input ng-model="name" type="text" placeholder="Enter a girls name..."></p>
     	<label>Adjective</label>
@@ -80,9 +81,30 @@
     	<p><input ng-model="pnoun2" type="text" placeholder="Enter a plural noun..."></p>
     	<label>Verb ending in 's'</label>
     	<p><input ng-model="verb" type="text" placeholder="Enter a verb, ending in 's'..."></p>
-    	<p><button ng-click="(toggle=!toggle)">Generate!</button></p>
-    	<h3 ng-show="toggle">I'm in love with {{name}}. She's so {{adj}}!<br>She has big flat {{pnoun0}}, and when our<br>{{pnoun1}} meet, I get {{insect}} in my stomach.<br> I've fallen for her like a ton of {{pnoun2}}, and she<br>{{verb}} for me, too. But I think she's got<br>another girlfriend. What should I do?</h3>
-    	<p><button ng-click="(toggle=!toggle)">Play again!</button></p>
+    	<p><button ng-click="toggleme()">Generate!</button></p>
+    	<h3 ng-show="toggle">I'm in love with {{name}}. She's so {{adj}}!<br>She has big fat {{pnoun0}}, and when our<br>{{pnoun1}} meet, I get {{insect}} in my stomach.<br> I've fallen for her like a ton of {{pnoun2}}, and she<br>{{verb}} for me, too. But I think she's got<br>another girlfriend. What should I do?</h3>
+    	<p><button ng-click="toggle=!toggle">Play again!</button></p>
+    </div> -->
+<!--     <div ng-init="symbols=['&spades;', '&clubs;', '&hearts;', '&diams;']">
+    	<ul ng-repeat="symbol in symbols">
+    		<li>
+    		{{symbol}}
+    		</li>
+    	</ul>
+    </div> -->
+   <!--  <div ng-repeat="num in [1,1,2,5,6,9,9,9] track by $index">
+    	<ul>
+    		<li>
+    		{{num}}
+    		</li>
+    	</ul>
+    </div> -->
+    <div ng-controller="passwordController">
+    	<h1>Sign Up Page</h1>
+ 		<input ng-model="pass" type="password" ng-keypress="keypressed(pass.length)" ><br>
+ 		<p ng-class="{red: pass.length < 6, green: pass.length > 5}">Your password is {{pass.length}} characters</p>
+ 		<button ng-show="pass.length > 5">Sign Up!</button>
+ 		<p ng-show="pass.length < 6">Your Password is Invalid!</p>   	
     </div>
   
 </body>

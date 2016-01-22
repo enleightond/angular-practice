@@ -1,6 +1,5 @@
 var application = angular.module('myapp', []); 
-	application.controller("HelloController", 
-		function($scope) {
+	application.controller("HelloController", function($scope) {
 			$scope.hello = {};
 			$scope.hello.title = "World";
 
@@ -8,8 +7,7 @@ var application = angular.module('myapp', []);
 				console.log($scope.hello.title);
 			}
 		});
-	application.controller("PetController",
-		function($scope) {
+	application.controller("PetController",function($scope) {
 			$scope.petSelect = {}
 			$scope.petSelect.select = "";
 			$scope.petSelect.selectOptions = [
@@ -20,20 +18,24 @@ var application = angular.module('myapp', []);
 				"Neither"
 			];
 		});
-	application.controller("numController",
-		function($scope) {
+	application.controller("numController",function($scope) {
 			$scope.data = {}
 			numChoice : null;		
 		});
-	application.controller("tipController",
-		function($scope){
+	application.controller("tipController",function($scope){
 			$scope.selectTip = [.10,.15,.20];
 		});
-	application.controller("madController", 
-		function($scope) {
+	application.controller("madController", function($scope) {
 			$scope.toggle = false;
-			 
+
+			$scope.toggleme = function(){
+				$scope.toggle = !$scope.toggle;
+			};
 		});
+	application.controller("passwordController",function($scope) {
+			$scope.isValid = false;
+			$scope.pass = "";
+	});
 		
 
 		
