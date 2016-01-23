@@ -19,7 +19,7 @@ var application = angular.module('myapp', []);
 			];
 		});
 	application.controller("numController",function($scope) {
-			$scope.data = {}
+			$scope.data = {};
 			numChoice : null;		
 		});
 	application.controller("tipController",function($scope){
@@ -35,6 +35,10 @@ var application = angular.module('myapp', []);
 	application.controller("passwordController",function($scope) {
 			$scope.isValid = false;
 			$scope.pass = "";
+	});
+	application.controller("cameraController", function($scope) {
+			$scope.cameras = [];
+	
 	});
 		
 
