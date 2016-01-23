@@ -106,7 +106,7 @@
  		<button ng-show="pass.length > 5">Sign Up!</button>
  		<p ng-show="pass.length < 6">Your Password is Invalid!</p>   	
     </div> -->
-  	<div ng-init="cameras=
+  	<!-- <div ng-init="cameras=
   		[
 		  {
 		    title: 'Nikon D3100 DSLR',
@@ -143,7 +143,12 @@
 	           <h3>{{ camera.title }}</h3>
           </li>
 		</ul>
-  	</div>
+  	</div> -->
+  	<div ng-controller="exerciseController">
+  		<h1 ng-class="{purple: favColor}">{{favColor}}</h1>
+  		<h3>{{secondsInACentury | number}}</h3>
+  		<p>{{rightNow()}}</p>
+  	</div> 
 </body>
 </html>
 

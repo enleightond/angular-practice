@@ -40,7 +40,17 @@ var application = angular.module('myapp', []);
 			$scope.cameras = [];
 	
 	});
-		
+	application.controller("exerciseController", function($scope){
+			$scope.favColor = "Purple";
+			$scope.secondsInACentury = (100*365*24*60*60)
+			$scope.rightNow = function (){
+				var d = new Date();  
+				$scope.d.getHours();
+				$scope.d.getMinutes();
+				$scope.d.getSeconds();
+		}
+
+	})
 
 		
 		
