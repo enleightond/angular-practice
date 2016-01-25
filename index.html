@@ -147,7 +147,7 @@
   	<div ng-controller="exerciseController">
   		<h1 ng-class="{purple: favColor}">{{favColor}}</h1>
   		<h3>{{secondsInACentury | number}}</h3>
-  		<p>{{rightNow()}}</p>
+  		<p>{{rightNow | date: 'yyyy-MM-dd HH:mm'}}</p>
   	</div> 
 </body>
 </html>
