@@ -44,7 +44,8 @@ var application = angular.module('myapp', []);
 			$scope.favColor = "Purple";
 			$scope.secondsInACentury = (100*365*24*60*60)
 			$scope.rightNow = new Date();
-	})
+			
+	});
 
 		
 		
