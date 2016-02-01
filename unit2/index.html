@@ -14,8 +14,8 @@
 	<script type='text/javascript' src="js/controllers.js"></script>
 </head>
 <body>
-	<div ng-controller="OmdbController">
-		<form name="form" ng-submit="submit(form)">
+	<div ng-controller="OmdbController" ng-submit="submit(form)">
+		<form name="form">
 			<center>
 				<h1>Angular OMDb API Search	</h1>
 				<h4>Enter a movie title.</h4>
@@ -29,14 +29,8 @@
 		</form>
 	</div>
 	<hr>
-	<div ng-controller="MovieController" ng-view>
-		<div ng-repeat="title in results">
-			<a href="">{{ title }}</a>	
-			<a href="">{{ imdbID }}</a>
-			<a href="">{{ poster }}</a>
-
-		</div>
+	<div ng-view>
+		
 	</div>
-	
 </body>
 </html>

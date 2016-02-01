@@ -1,21 +1,23 @@
 var app = angular.module ('moviedb');
 
-app.controller('OmdbController', function($scope, $http){
+app.controller('OmdbController', function($scope, $http, $location, MovieList){
 	$scope.submit = function(form){		
 		var movieTitle = $scope.findMovie.replace(' ','+');
-		var results = $http.get('http://www.omdbapi.com/?t='+ movieTitle).then(function(data){
-			console.log('http://www.omdbapi.com/?t='+ movieTitle.data.title)
+		$scope.movieList = MovieList;
+		$http.get('http://www.omdbapi.com/?s=' + movieTitle).then(function(data){
+			MovieList.results = data.data.Search;
+			console.log(MovieList.results);
+			$location.path('/omdbID');
 		});
-	}
-
-	
+	}	
 }); 
 
-app.controller("MovieController", function($scope, $http){
-	$scope.results = function(movieResult){
-		var imdbID = $http.get('http://www.omdbapi.com/?i='+ ).then(function(data){
-			console.log(data.data.imdbID)
-			console.log(data.data.Poster)
-		});
-	}
+app.controller("MovieController", function($scope, $http, MovieList){
+	$scope.movieList = MovieList;
+})
+
+app.factory('MovieList', function(){
+	var searchlist = {};
+	searchlist.results = [];
+	return searchlist;
 })
