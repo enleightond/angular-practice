@@ -39,7 +39,7 @@
     		<div class="col-md-3">
     			Search by category:
     			<select >
-    				<option value="placeholder" selected="selected"></option>	
+    				<option selected="selected"></option>	
     				<option value="placeholder">1</option>	
     				<option value="placeholder">2</option>	
     				<option value="placeholder">3</option>	
@@ -50,12 +50,67 @@
     			Search by name:
     			<input type="text">
     		</div>
-    		<div class="col-md-3"></div>
-    		<div class="col-md-3">
+    		<div class="col-md-4"></div>
+    		<div class="col-md-2">
     			<button type="button" class="btn btn-danger">Checkout | Bag: {{}}</button>
     		</div>
     	</div>
-    	<!-- table starts here -->
+    	<div>
+    		<table class="table table-bordered">
+    			<thead>
+    				<tr>
+    					<th class="col-md-4">Tea</th>
+    					<th>
+    						<span>Information</span>
+    						<span>Sort By Price:
+								<select>
+									<option selected="selected"></option>	
+									<option value="highest">Highest</option>
+									<option value="lowest">Lowest</option>
+								</select>
+    						</span>
+    					</th>
+    				</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<td><img src="https://www.placebear.com/120/120"></td>
+    					<td>
+    						<ul class="list-unstyled">
+    							<li>
+    								<h2>{{}}</h2>
+    								<span>Quantity:
+										<select name="" id="">
+											<option value="0"></option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+										</select>
+										<button class="btn btn-warning">Add To Bag</button>
+    								</span>
+    							</li>
+    							<li>Price: {{}}</li>
+    							<li>Caffeine Scale: {{}}</li>
+    							<li>Ingredients: {{}}</li>
+    							<li>Rating: {{}}</li>
+    							<li>In stock? {{}}</li>
+    							<li>Categories:
+									<ul>
+										<li>stuff</li>
+									</ul>
+    							</li>
+    						</ul>
+    					</td>
+    				</tr>
+    			</tbody>
+    		</table> 
+    	</div>
     </div>
 </body>
 
