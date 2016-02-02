@@ -6,7 +6,11 @@ app.config(function($routeProvider){
 			//templateUrl: "partials/index.html", 
 			controller: "OmdbController"
 		})
-		.when('/omdbID', {
+		.when('/results', {
+			templateUrl: "partials/results.html",
+			controller: "ResultController"
+		})
+		.when('/:id/movie', {
 			templateUrl: "partials/movie.html",
 			controller: "MovieController"
 		})
