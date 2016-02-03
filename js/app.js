@@ -10,3 +10,9 @@ app.config(function($routeProvider, $locationProvider) {
 		controller: "Checkout"
 	});
 })
+
+app.directive('singleTea', function() {
+	return {
+		template: '_id'
+	}
+})

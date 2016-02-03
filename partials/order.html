@@ -1,4 +1,4 @@
-<div class="container" ng-controller="Selection">
+<div class="container">
     <div class="row">
         <div class="col-md-3">
             Search by category:
@@ -16,10 +16,10 @@
         </div>
         <div class="col-md-4"></div>
         <div class="col-md-2">
-            <button type="button" class="btn btn-danger">Checkout | Bag: {{}}</button>
+            <button type="button" class="btn btn-danger">Checkout | Bag: {{  }}</button>
         </div>
     </div>
-    <div>
+    <div ng-controller="Selection">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -42,7 +42,7 @@
                     <td>
                         <ul class="list-unstyled">
                             <li>
-                                <h2>{{}}</h2>
+                                <h2>{{  }}</h2>
                                 <span>Quantity:
                                         <select name="" id="">
                                             <option value="0"></option>
