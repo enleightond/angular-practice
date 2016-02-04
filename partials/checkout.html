@@ -1,0 +1,30 @@
+<div class="container">
+    <div>
+        <h4>My Shopping Bag
+        <span id="total">Order total: {{ order total }}</span></h4>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <th class="col-md-6">Product</th>
+                <th class="col-md-2">Quantity</th>
+                <th class="col-md-2">Sub-total</th>
+            </thead>
+            <tbody>
+                <td>
+                	<h4>{{ tea name }}</h4>
+                	<img src="https://www.placebear.com/120/120">
+                	<h5>Caffeine Scale: {{ number }}</h5>
+					<h5>Ingredients: {{ a bunch of stuff }}</h5>
+					<h5>Rating: {{ number }}</h5>
+                </td>
+                <td>{{ quantity }}</td>
+                <td><strong>{{ subtotal }}</strong></td>
+                <td>
+                	<button class="btn btn-warning">Edit</button>
+                	<button class="btn btn-danger">Remove</button>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>
