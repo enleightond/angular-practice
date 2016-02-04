@@ -12,7 +12,11 @@
         </div>
         <div class="col-md-3">
             Search by name:
-            <input type="text">
+            <form role="search">
+                <div class="form-group">
+                  <input type="text" class="search" placeholder="Search" ng-model="searchText">
+                </div>
+            </form>
         </div>
         <div class="col-md-4"></div>
         <div class="col-md-2">
@@ -27,17 +31,17 @@
                     <th>
                         <span>Information</span>
                         <span id="sort">Sort By Price:
-                                <select>
-                                    <option selected="selected"></option>   
-                                    <option value="highest">Highest</option>
-                                    <option value="lowest">Lowest</option>
-                                </select>
-                            </span>
+                            <select>
+                                <option selected="selected"></option>   
+                                <option value="highest">Highest</option>
+                                <option value="lowest">Lowest</option>
+                            </select>
+                        </span>
                     </th>
                 </tr>
             </thead>
                 <tbody>
-                    <tr single-tea  ng-repeat="tea in teaData.data" tea-value="tea">
+                    <tr single-tea ng-repeat="tea in teaData.data | filter: searchText" tea-value="tea">
                     </tr>
                 </tbody>
         </table>

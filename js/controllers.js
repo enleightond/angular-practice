@@ -1,5 +1,4 @@
 app.controller('Selection', function($scope, ApiTeaData) {
-	
 	$scope.teaData = ApiTeaData;
 	console.log($scope.teaData)
 });
