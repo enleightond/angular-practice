@@ -1,14 +1,5 @@
 var app = angular.module('teaStore', ['ngRoute']);
 
-app.directive('singleTea', function() {
-	return {
-		templateUrl: '/templates/teaTemplate.html',
-		link: function(scope,element,attributes){
-			console.log(scope);
-		}
-	};
-});
-
 app.config(function($routeProvider, $locationProvider) {
 	$routeProvider
 	.when('/', {
@@ -19,3 +10,15 @@ app.config(function($routeProvider, $locationProvider) {
 		controller: "Checkout"
 	});
 })
+
+app.directive('singleTea', function() {
+	return {
+		scope: {
+			teaValue: '=',
+		},
+		templateUrl: '/templates/teaTemplate.html',
+		link: function(scope,element, attributes){
+			console.log(scope);
+		}
+	};
+});
