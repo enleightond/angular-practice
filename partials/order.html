@@ -2,12 +2,18 @@
     <div class="row">
         <div class="col-md-3">
             Search by category:
-            <select>
+            <select ng-model="searchCategory">
                 <option selected="selected"></option>
-                <option value="placeholder">1</option>
-                <option value="placeholder">2</option>
-                <option value="placeholder">3</option>
-                <option value="placeholder">4</option>
+                <option value="dark">dark</option>
+                <option value="cold">cold</option>
+                <option value="awesome">awesome</option>
+                <option value="dry">dry</option>
+                <option value="hot">hot</option>
+                <option value="summer">summer</option>
+                <option value="lucid">lucid</option>
+                <option value="warm">warm</option>
+                <option value="winter">winter</option>
+                <option value="spring">spring</option>
             </select>
         </div>
         <div class="col-md-3">
@@ -41,7 +47,7 @@
                 </tr>
             </thead>
                 <tbody>
-                    <tr single-tea ng-repeat="tea in teaData.data | filter: searchText" tea-value="tea">
+                    <tr single-tea ng-repeat="tea in teaData.data | filter: searchText | filter: searchCategory" tea-value="tea">
                     </tr>
                 </tbody>
         </table>

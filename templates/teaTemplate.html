@@ -24,9 +24,9 @@
         <li>Ingredients: {{ tea.ingredients }}</li>
         <li>Rating: {{ tea.rating }}</li>
         <li>In stock? {{ tea.inStock}}</li>
-        <li>Categories: {{ tea.categories }}
-            <ul>
-                <li>stuff</li>
+        <li>Categories:
+            <ul ng-repeat="category in tea.categories">
+                <li>{{ category }}</li>
             </ul>
         </li>
     </ul>
