@@ -19,7 +19,7 @@
             <button type="button" class="btn btn-danger">Checkout | Bag: {{ }}</button>
         </div>
     </div>
-    <div ng-controller="Selection">
+    <div>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -69,8 +69,7 @@
                                         <li>stuff</li>
                                     </ul>
                                 </li> -->
-                               <!--  <singleTea ng-repeat="tea in singleTea" tea-values="tea"></singleTea> -->
-                               <single-tea></single-tea>
+                                <single-tea  ng-repeat="tea in teaData.data" tea-value="tea"></single-tea>
                             </ul>
                         </td>
                     </tr>
