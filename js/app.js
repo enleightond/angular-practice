@@ -13,6 +13,11 @@ app.config(function($routeProvider, $locationProvider) {
 
 app.directive('singleTea', function() {
 	return {
-		template: '_id'
-	}
-})
+		// template: 'YOLO DAWG'
+
+		// scope: {
+		// 	teaValues: '=teaValues',
+		// },
+		templateUrl: '/templates/teaTemplate.html'
+	};
+});

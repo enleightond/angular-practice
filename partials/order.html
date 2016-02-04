@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-4"></div>
         <div class="col-md-2">
-            <button type="button" class="btn btn-danger">Checkout | Bag: {{  }}</button>
+            <button type="button" class="btn btn-danger">Checkout | Bag: {{ }}</button>
         </div>
     </div>
     <div ng-controller="Selection">
@@ -36,14 +36,14 @@
                     </th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><img src="http://s7d5.scene7.com/is/image/Teavana/32664_d?$cimg$"></td>
-                    <td>
-                        <ul class="list-unstyled">
-                            <li>
-                                <h2>{{  }}</h2>
-                                <span>Quantity:
+            
+                <tbody>
+                    <tr>
+                        <td><img src="http://s7d5.scene7.com/is/image/Teavana/32664_d?$cimg$"></td>
+                        <td>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <span>Quantity:
                                         <select name="" id="">
                                             <option value="0"></option>
                                             <option value="1">1</option>
@@ -58,22 +58,23 @@
                                         </select>
                                         <button class="btn btn-warning">Add To Bag</button>
                                     </span>
-                            </li>
-                            
-                            <li>Price: {{}}</li>
-                            <li>Caffeine Scale: {{}}</li>
-                            <li>Ingredients: {{}}</li>
-                            <li>Rating: {{}}</li>
-                            <li>In stock? {{}}</li>
-                            <li>Categories:
-                                <ul>
-                                    <li>stuff</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
+                                </li>
+<!--                                 <li>Price: {{}}</li>
+                                <li>Caffeine Scale: {{}}</li>
+                                <li>Ingredients: {{}}</li>
+                                <li>Rating: {{}}</li>
+                                <li>In stock? {{}}</li>
+                                <li>Categories:
+                                    <ul>
+                                        <li>stuff</li>
+                                    </ul>
+                                </li> -->
+                               <!--  <singleTea ng-repeat="tea in singleTea" tea-values="tea"></singleTea> -->
+                               <single-tea></single-tea>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
         </table>
     </div>
 </div>
