@@ -1,12 +1,42 @@
+<td><img src="{{ tea.imageUrl }}"></td>
+<td>
+    <ul class="list-unstyled">
+        <li>
+            <div>
+                <h2>{{ tea.name }}
+                    <span class="pull-right">
+                        Quantity:                    <select name="" id="">
+                            <option value="0"></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                        <button class="btn btn-warning">Add To Bag</button>
+                    </span>
+                </h2>
 
-<li><h2>{{ teaValue.title }}</h2></li>
-<li>Price: {{ teaValue.price }}</li>
-<li>Caffeine Scale: {{ teaValue.caffeineScale }}</li>
-<li>Ingredients: {{ teaValue.ingredients }}</li>
-<li>Rating: {{ teaValue.rating }}</li>
-<li>In stock? {{ teaValue.inStock}}</li>
-<li>Categories: {{ teaValue.categories }}
-    <ul>
-        <li>stuff</li>
+            </div>
+        </li>
+        <li>Price: {{ tea.price / 100 | currency }}</li>
+        <li>Caffeine Scale: {{ tea.caffeineScale }}</li>
+        <li>Ingredients: {{ tea.ingredients }}</li>
+        <li>Rating: {{ tea.rating }}</li>
+        <li>In stock? {{ tea.inStock}}</li>
+        <li>Categories:
+            <ul ng-repeat="category in tea.categories">
+                <li>{{ category }}</li>
+            </ul>
+        </li>
     </ul>
-</li>
+</td>
+
+
+
+
+

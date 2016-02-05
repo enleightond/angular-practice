@@ -2,19 +2,27 @@
     <div class="row">
         <div class="col-md-3">
             Search by category:
-            <select>
+            <select ng-model="searchCategory">
                 <option selected="selected"></option>
-                <option value="placeholder">1</option>
-                <option value="placeholder">2</option>
-                <option value="placeholder">3</option>
-                <option value="placeholder">4</option>
+                <option value="dark">dark</option>
+                <option value="cold">cold</option>
+                <option value="awesome">awesome</option>
+                <option value="dry">dry</option>
+                <option value="hot">hot</option>
+                <option value="summer">summer</option>
+                <option value="lucid">lucid</option>
+                <option value="warm">warm</option>
+                <option value="winter">winter</option>
+                <option value="spring">spring</option>
             </select>
         </div>
-        <div class="col-md-3">
-            Search by name:
-            <input type="text">
+        <div class="col-md-7">
+            <form role="search">
+                <div class="form-group">
+                  Search by name: <input id="nameSearch" type="text" class="search" ng-model="searchText">
+                </div>
+            </form>
         </div>
-        <div class="col-md-4"></div>
         <div class="col-md-2">
             <button type="button" class="btn btn-danger">Checkout | Bag: {{ }}</button>
         </div>
@@ -27,51 +35,17 @@
                     <th>
                         <span>Information</span>
                         <span id="sort">Sort By Price:
-                                <select>
-                                    <option selected="selected"></option>   
-                                    <option value="highest">Highest</option>
-                                    <option value="lowest">Lowest</option>
-                                </select>
-                            </span>
+                            <select ng-model="priceSort">
+                                <option selected="selected"></option>   
+                                <option value="highest">Highest</option>
+                                <option value="lowest">Lowest</option>
+                            </select>
+                        </span>
                     </th>
                 </tr>
             </thead>
-            
                 <tbody>
-                    <tr>
-                        <td><img src="http://s7d5.scene7.com/is/image/Teavana/32664_d?$cimg$"></td>
-                        <td>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <span>Quantity:
-                                        <select name="" id="">
-                                            <option value="0"></option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                        </select>
-                                        <button class="btn btn-warning">Add To Bag</button>
-                                    </span>
-                                </li>
-<!--                                 <li>Price: {{}}</li>
-                                <li>Caffeine Scale: {{}}</li>
-                                <li>Ingredients: {{}}</li>
-                                <li>Rating: {{}}</li>
-                                <li>In stock? {{}}</li>
-                                <li>Categories:
-                                    <ul>
-                                        <li>stuff</li>
-                                    </ul>
-                                </li> -->
-                                <single-tea  ng-repeat="tea in teaData.data" tea-value="tea"></single-tea>
-                            </ul>
-                        </td>
+                    <tr single-tea ng-repeat="tea in teaData.data | filter: searchText | filter: searchCategory | orderBy: sort(priceSort)" tea-value="tea">
                     </tr>
                 </tbody>
         </table>

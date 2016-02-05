@@ -1,7 +1,17 @@
 app.controller('Selection', function($scope, ApiTeaData) {
-	
 	$scope.teaData = ApiTeaData;
 	console.log($scope.teaData)
+	$scope.sort = function(sortValue) {
+		if (sortValue === 'highest') {
+			$scope.teaData.data.sort(function(a,b) {
+				return b.price - a.price;
+			})
+		} else {
+			$scope.teaData.data.sort(function(a,b) {
+				return a.price - b.price;
+			})
+		}
+	}
 });
 
 app.controller('Checkout', function() {
