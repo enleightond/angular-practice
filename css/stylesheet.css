@@ -5,3 +5,7 @@
 #sort {
 	float: right;	
 }
+
+#nameSearch {
+	display: inline;
+}

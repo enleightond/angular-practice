@@ -16,15 +16,13 @@
                 <option value="spring">spring</option>
             </select>
         </div>
-        <div class="col-md-3">
-            Search by name:
+        <div class="col-md-7">
             <form role="search">
                 <div class="form-group">
-                  <input type="text" class="search" placeholder="Search" ng-model="searchText">
+                  Search by name: <input id="nameSearch" type="text" class="search" ng-model="searchText">
                 </div>
             </form>
         </div>
-        <div class="col-md-4"></div>
         <div class="col-md-2">
             <button type="button" class="btn btn-danger">Checkout | Bag: {{ }}</button>
         </div>
@@ -37,7 +35,7 @@
                     <th>
                         <span>Information</span>
                         <span id="sort">Sort By Price:
-                            <select>
+                            <select ng-model="priceSort">
                                 <option selected="selected"></option>   
                                 <option value="highest">Highest</option>
                                 <option value="lowest">Lowest</option>
@@ -47,7 +45,7 @@
                 </tr>
             </thead>
                 <tbody>
-                    <tr single-tea ng-repeat="tea in teaData.data | filter: searchText | filter: searchCategory" tea-value="tea">
+                    <tr single-tea ng-repeat="tea in teaData.data | filter: searchText | filter: searchCategory | orderBy: sort(priceSort)" tea-value="tea">
                     </tr>
                 </tbody>
         </table>
