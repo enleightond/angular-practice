@@ -4,7 +4,6 @@ app.directive('singleTea', function() {
 	return {
 		templateUrl: '/templates/teaTemplate.html',
 		link: function(scope,element, attributes){
-			console.log(scope);
 		}
 	};
 });

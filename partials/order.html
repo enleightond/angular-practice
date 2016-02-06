@@ -24,7 +24,8 @@
             </form>
         </div>
         <div class="col-md-2">
-            <button type="button" class="btn btn-danger">Checkout | Bag: {{ }}</button>
+            <button ng-pluralize type="button" class="btn btn-danger" count="cart.bag.length" when="{ '0': 'Checkout | Bag: Empty', '1': 'Checkout | Bag: 1 Tea', 'other': 'Checkout | Bag: {} Teas' }" ng-click="goToCheckout()">
+            </button>
         </div>
     </div>
     <div>

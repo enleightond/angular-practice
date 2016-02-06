@@ -1,21 +1,46 @@
-app.controller('Selection', function($scope, ApiTeaData) {
+app.controller('Selection', function($scope, $location, ApiTeaData, ShoppingCart) {
 	$scope.teaData = ApiTeaData;
-	console.log($scope.teaData)
+	$scope.cart = ShoppingCart;
+	$scope.goToCheckout = function(path) {
+		$location.path('/checkout');
+	};
 	$scope.sort = function(sortValue) {
 		if (sortValue === 'highest') {
 			$scope.teaData.data.sort(function(a,b) {
 				return b.price - a.price;
-			})
+			});
 		} else {
 			$scope.teaData.data.sort(function(a,b) {
 				return a.price - b.price;
-			})
+			});
 		}
 	}
 });
 
-app.controller('Checkout', function() {
+app.controller('Checkout', function($scope, ShoppingCart) {
+	$scope.shoppingCart = ShoppingCart;
+});
 
+app.factory('ShoppingCart', function() {
+	var customerCart = {};
+	customerCart.bag = [];
+	customerCart.addToCart = function addToCart(quantity, teaObj){
+		var itemNotSeen = true;
+		customerCart.bag.forEach(function(el) {
+			if (el.tea._id === teaObj._id) {
+				el.quantity = Number(el.quantity) + Number(quantity);
+				itemNotSeen = false;
+			}
+		});
+		if (itemNotSeen) {
+			customerSelection = {};
+			customerSelection.quantity = quantity;
+			customerSelection.tea = teaObj;
+			customerCart.bag.push(customerSelection);
+			itemNotSeen = true;
+		}
+	};
+	return customerCart;
 });
 
 app.factory('ApiTeaData', function() {
