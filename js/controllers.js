@@ -1,4 +1,4 @@
-app.controller('Selection', function($scope, $location, ApiTeaData, ShoppingCart) {
+ app.controller('Selection', function($scope, $location, ApiTeaData, ShoppingCart) {
 	$scope.teaData = ApiTeaData;
 	$scope.cart = ShoppingCart;
 	$scope.goToCheckout = function(path) {
@@ -19,6 +19,7 @@ app.controller('Selection', function($scope, $location, ApiTeaData, ShoppingCart
 
 app.controller('Checkout', function($scope, ShoppingCart) {
 	$scope.shoppingCart = ShoppingCart;
+	
 });
 
 app.factory('ShoppingCart', function() {
