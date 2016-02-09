@@ -1,0 +1,25 @@
+.red {
+	color:red;
+}
+
+.green {
+	color:#00ff00;
+}
+
+.yellow {
+	color:yellow;
+}
+
+.purple {
+	color:purple;
+}
+
+#images {
+	height: 140px;
+	width: 160px;
+	padding-top: 15px;
+}
+
+.comments {
+	float: left;
+}
